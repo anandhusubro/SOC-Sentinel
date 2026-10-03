@@ -1,0 +1,9 @@
+detections:
+  - id: brute_force_then_success
+    mitre: T1110
+  - id: encoded_powershell
+    mitre: T1059.001
+  - id: office_to_powershell
+    mitre: T1059.001
+  - id: suspicious_egress
+    mitre: T1041

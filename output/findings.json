@@ -1,0 +1,90 @@
+{
+  "incidents": [
+    {
+      "host": "WS-17",
+      "severity": "HIGH",
+      "score": 100,
+      "multi_stage_correlation": true,
+      "finding_count": 4,
+      "techniques": [
+        "T1041",
+        "T1059.001",
+        "T1110"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "kind": "bruteforce_success",
+      "title": "Failed logins followed by successful authentication",
+      "severity": "HIGH",
+      "timestamp": "2026-09-18T09:01:25Z",
+      "host": "WS-17",
+      "user": "anita",
+      "mitre": {
+        "id": "T1110",
+        "name": "Brute Force"
+      },
+      "evidence": {
+        "failed_attempts": 5,
+        "source_ip": "203.0.113.45",
+        "first_failure": "2026-09-18T09:01:00Z",
+        "success": "2026-09-18T09:01:25Z",
+        "rationale": "Same user, host and source IP; success follows rapid failures."
+      }
+    },
+    {
+      "kind": "encoded_powershell",
+      "title": "Encoded PowerShell execution",
+      "severity": "HIGH",
+      "timestamp": "2026-09-18T09:03:00Z",
+      "host": "WS-17",
+      "user": "anita",
+      "mitre": {
+        "id": "T1059.001",
+        "name": "PowerShell"
+      },
+      "evidence": {
+        "parent": "winword.exe",
+        "command_line": "powershell.exe -NoP -W Hidden -Enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAKQA=",
+        "rationale": "Encoded PowerShell reduces command visibility and merits investigation."
+      }
+    },
+    {
+      "kind": "office_to_powershell",
+      "title": "Office application spawned PowerShell",
+      "severity": "HIGH",
+      "timestamp": "2026-09-18T09:03:00Z",
+      "host": "WS-17",
+      "user": "anita",
+      "mitre": {
+        "id": "T1059.001",
+        "name": "PowerShell"
+      },
+      "evidence": {
+        "parent": "winword.exe",
+        "child": "powershell.exe",
+        "rationale": "Office-to-PowerShell is an unusual parent-child chain often investigated for malicious document execution."
+      }
+    },
+    {
+      "kind": "suspicious_egress",
+      "title": "Large outbound transfer to threat-listed IP",
+      "severity": "HIGH",
+      "timestamp": "2026-09-18T09:04:00Z",
+      "host": "WS-17",
+      "user": "anita",
+      "mitre": {
+        "id": "T1041",
+        "name": "Exfiltration Over C2 Channel"
+      },
+      "evidence": {
+        "destination": "45.83.64.12",
+        "port": "443",
+        "bytes_out": 2500000,
+        "threat_intel_match": true,
+        "rationale": "Large transfer alone is insufficient; threat-intel match and nearby endpoint activity increase confidence."
+      }
+    }
+  ]
+}

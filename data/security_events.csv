@@ -1,0 +1,11 @@
+timestamp,event_type,host,user,source_ip,dest_ip,dest_port,bytes_out,process,parent_process,command_line,status
+2026-09-18T09:01:00Z,auth,WS-17,anita,203.0.113.45,,,0,,,,failure
+2026-09-18T09:01:05Z,auth,WS-17,anita,203.0.113.45,,,0,,,,failure
+2026-09-18T09:01:10Z,auth,WS-17,anita,203.0.113.45,,,0,,,,failure
+2026-09-18T09:01:15Z,auth,WS-17,anita,203.0.113.45,,,0,,,,failure
+2026-09-18T09:01:20Z,auth,WS-17,anita,203.0.113.45,,,0,,,,failure
+2026-09-18T09:01:25Z,auth,WS-17,anita,203.0.113.45,,,0,,,,success
+2026-09-18T09:03:00Z,process,WS-17,anita,,,,0,powershell.exe,winword.exe,powershell.exe -NoP -W Hidden -Enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAKQA=,
+2026-09-18T09:04:00Z,network,WS-17,anita,172.16.8.49,45.83.64.12,443,2500000,,,,
+2026-09-18T09:08:00Z,auth,WS-22,maria,10.10.5.8,,,0,,,,success
+2026-09-18T09:10:00Z,network,WS-22,maria,172.16.8.22,142.250.183.14,443,45000,,,,

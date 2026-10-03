@@ -1,0 +1,11 @@
+timestamp,host,event_type,summary
+2026-09-18T09:01:00Z,WS-17,auth,failure login user=anita src=203.0.113.45
+2026-09-18T09:01:05Z,WS-17,auth,failure login user=anita src=203.0.113.45
+2026-09-18T09:01:10Z,WS-17,auth,failure login user=anita src=203.0.113.45
+2026-09-18T09:01:15Z,WS-17,auth,failure login user=anita src=203.0.113.45
+2026-09-18T09:01:20Z,WS-17,auth,failure login user=anita src=203.0.113.45
+2026-09-18T09:01:25Z,WS-17,auth,success login user=anita src=203.0.113.45
+2026-09-18T09:03:00Z,WS-17,process,winword.exe -> powershell.exe powershell.exe -NoP -W Hidden -Enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAKQA=
+2026-09-18T09:04:00Z,WS-17,network,172.16.8.49 -> 45.83.64.12:443 bytes_out=2500000
+2026-09-18T09:08:00Z,WS-22,auth,success login user=maria src=10.10.5.8
+2026-09-18T09:10:00Z,WS-22,network,172.16.8.22 -> 142.250.183.14:443 bytes_out=45000
