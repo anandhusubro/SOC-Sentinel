@@ -1,7 +1,207 @@
-<!doctype html><html><head><meta charset="utf-8"><title>SOC Sentinel v2</title>
-<style>body{font-family:Arial;background:#0b1020;color:#eef3ff;padding:30px}.wrap{max-width:1000px;margin:auto}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#131c31;padding:20px;border-radius:14px;border:1px solid #293650}
-.big{font-size:34px;font-weight:700}table{width:100%;border-collapse:collapse;margin-top:20px;background:#131c31}th,td{padding:13px;border-bottom:1px solid #293650;text-align:left}</style></head>
-<body><div class="wrap"><h1>SOC Sentinel v2</h1><p>Multi-Stage Intrusion Detection & Incident Triage</p>
-<div class="grid"><div class="card">Severity<div class="big">HIGH</div></div><div class="card">Risk Score<div class="big">100/100</div></div><div class="card">Findings<div class="big">4</div></div></div>
-<table><tr><th>Timestamp</th><th>Detection</th><th>MITRE</th><th>Severity</th></tr><tr><td>2026-09-18T09:01:25Z</td><td>Failed logins followed by successful authentication</td><td>T1110</td><td>HIGH</td></tr><tr><td>2026-09-18T09:03:00Z</td><td>Encoded PowerShell execution</td><td>T1059.001</td><td>HIGH</td></tr><tr><td>2026-09-18T09:03:00Z</td><td>Office application spawned PowerShell</td><td>T1059.001</td><td>HIGH</td></tr><tr><td>2026-09-18T09:04:00Z</td><td>Large outbound transfer to threat-listed IP</td><td>T1041</td><td>HIGH</td></tr></table></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOC Sentinel v2</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #eef3ff;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #aab6cc;
+      margin-top: 0;
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: #131c31;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid #293650;
+    }
+
+    .card-label {
+      color: #aab6cc;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .big {
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    .high {
+      color: #ff7676;
+    }
+
+    .section {
+      background: #131c31;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid #293650;
+      margin-bottom: 25px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #131c31;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 13px;
+      border-bottom: 1px solid #293650;
+      text-align: left;
+    }
+
+    th {
+      color: #aab6cc;
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #402029;
+      color: #ff9c9c;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        font-size: 13px;
+      }
+
+      th,
+      td {
+        padding: 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <h1>SOC Sentinel v2</h1>
+    <p class="subtitle">
+      Multi-Stage Intrusion Detection & Incident Triage
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-label">Incident Severity</div>
+        <div class="big high">HIGH</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Risk Score</div>
+        <div class="big">100/100</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Correlated Findings</div>
+        <div class="big">4</div>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <strong>Affected Host:</strong> WS-17
+      <br><br>
+
+      <strong>MITRE ATT&CK:</strong>
+      T1110, T1059.001, T1041
+      <br><br>
+
+      <span class="badge">
+        Suspected Account Compromise + Post-Authentication Execution + Suspicious Egress
+      </span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Detection</th>
+          <th>MITRE</th>
+          <th>Severity</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>2026-09-18T09:01:25Z</td>
+          <td>Failed logins followed by successful authentication</td>
+          <td>T1110</td>
+          <td class="high">HIGH</td>
+        </tr>
+
+        <tr>
+          <td>2026-09-18T09:03:00Z</td>
+          <td>Encoded PowerShell execution</td>
+          <td>T1059.001</td>
+          <td class="high">HIGH</td>
+        </tr>
+
+        <tr>
+          <td>2026-09-18T09:03:00Z</td>
+          <td>Office application spawned PowerShell</td>
+          <td>T1059.001</td>
+          <td class="high">HIGH</td>
+        </tr>
+
+        <tr>
+          <td>2026-09-18T09:04:00Z</td>
+          <td>Large outbound transfer to threat-listed IP</td>
+          <td>T1041</td>
+          <td class="high">HIGH</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</body>
+</html>
