@@ -6,7 +6,7 @@ SOC Sentinel is a Python-based SOC investigation project that correlates authent
 
 Instead of treating alerts independently, the engine links suspicious events by **host and time window**, maps activity to **MITRE ATT&CK**, assigns a risk score, extracts IOCs, and produces analyst-ready investigation artifacts.
 
-![SOC Sentinel Dashboard](Screenshots/dashboard.png)
+![SOC Sentinel Dashboard](Screenshots/ss1.png)
 
 ---
 
